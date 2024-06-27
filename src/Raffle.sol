@@ -27,7 +27,6 @@ import {VRFCoordinatorV2Interface} from "@chainlink/contracts/src/v0.8/interface
 import {VRFConsumerBaseV2} from "@chainlink/contracts/src/v0.8/VRFConsumerBaseV2.sol";
 import {AutomationCompatibleInterface} from "@chainlink/contracts/src/v0.8/interfaces/AutomationCompatibleInterface.sol";
 
-
 contract Raffle is VRFConsumerBaseV2, AutomationCompatibleInterface {
     /* Errors */
     error Raffle__UpkeepNotNeeded(
@@ -47,7 +46,7 @@ contract Raffle is VRFConsumerBaseV2, AutomationCompatibleInterface {
     /* State variables */
     // Chainlink VRF Variables
     VRFCoordinatorV2Interface private immutable i_vrfCoordinator;
-// NOTE! As of newer versions of Chainlink, the subscription id is a uint256 instead of a uint64
+    // NOTE! As of newer versions of Chainlink, the subscription id is a uint256 instead of a uint64
     uint64 private immutable i_subscriptionId;
     bytes32 private immutable i_gasLane;
     uint32 private immutable i_callbackGasLimit;
